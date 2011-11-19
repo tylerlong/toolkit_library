@@ -1,7 +1,3 @@
 1. encryption.py: add a check password complexity method. avoid user creating too simple passwords.
 
-2. 不再以一个不成熟的私人项目出现了, 推出public的正式版本
-
-4. 迁移到github, 从此用git做版本控制!
-
 5. 

@@ -15,7 +15,7 @@ long_description = open('README').read().replace('{{ modules }}', read_modules()
 setup(
     name = toolkit_library.__name__,
     version = toolkit_library.__version__,
-    url = 'http://stackoverflow.com/users/862862/tyler-long',
+    url = 'https://github.com/tylerlong/toolkit_library',
     license = 'BSD',
     author = toolkit_library.__author__,
     author_email = 'tyler4long@gmail.com',

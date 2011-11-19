@@ -1,7 +1,7 @@
 # coding=utf-8
 """
-    toolkit_library.tests
-    ~~~~~~~~~~~~~~~~~~~~~
+    tests
+    ~~~~~
     Unit tests for code quality.
 """
 import unittest
@@ -13,12 +13,12 @@ class MailServerTestCase(unittest.TestCase):
 
     def setUp(self):
         """Initiate the smtp mail server"""
-        self.server = MailServer(host = 'smtp.gmail.com', port = 587, tls = True, account = 'wendaren.service@gmail.com', password = 'wendaren123')
+        self.server = MailServer(host = 'smtp.gmail.com', port = 587, tls = True, account = 'toolkit.library.feedback@gmail.com', password = 'password')
 
     def test_send_mail(self):
         """send an email"""
         with self.server:
-            self.server.send_mail('tyler4long@gmail.com', 'unittest of python', 'greetings from unittest of python')
+            self.server.send_mail('toolkit.library.feedback@gmail.com', 'toolkit_library mail_server', 'This message is sent via toolkit_library.mail_server')
 
 
 from toolkit_library.encryption import Encryption
