@@ -1,3 +1,5 @@
-1. encryption.py: add a check password complexity method. avoid user creating too simple passwords.
+5. add formatter. format html, xml, json ..etc
 
-5. 
+7. encryption.py improve complex_enough method, create some complexity levels to check against
+
+8. 

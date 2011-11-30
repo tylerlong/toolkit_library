@@ -30,3 +30,10 @@ class Encryption(object):
     def check_password(password, hashcode, salt):
         """Check if the password match the hashcode and salt"""
         return hashlib.sha256(password + salt).hexdigest() == hashcode
+
+    @staticmethod
+    def complex_enough(password, complexity):
+        if password == '123456':
+            return False
+        return True
+    # todo: create some complexity levels, from minimun to maximum. check passwords against these complexity levels

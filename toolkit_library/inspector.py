@@ -4,6 +4,7 @@
     Inspect a module or a package, get information of modules, methods and classes.
 """
 import inspect, pkgutil
+from input_util import InputUtil
 
 
 class ModuleInspector(object):
@@ -30,7 +31,7 @@ class ModuleInspector(object):
             for name, value in inspect.getmembers(self.module, predicate):
                 print '[{0}]: {1}'.format(name, value.__doc__)
             print '====================================================='
-            return self.invoke(raw_input('Please enter the function name which you want to invoke: '), *args) # recursive call with user input as parameter
+            return self.invoke(InputUtil.get_input('the function name which you want to invoke'), *args) # recursive call with user input as parameter
 
         functions = [value for (name, value) in inspect.getmembers(self.module, predicate) if name == function_name]
         if not functions:
@@ -52,7 +53,7 @@ class ModuleInspector(object):
             return function(*args)
 
         for i in range(len(missing_args) - len(defaults)): # prompt user for args
-            args.append(input('Please enter the value of parameter "{0}": '.format(missing_args[i])))
+            args.append(eval(InputUtil.get_input('the value of parameter "{0}"'.format(missing_args[i]))))
         args.extend(defaults) # Plus the default args
         return function(*args)
 
