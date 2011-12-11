@@ -1,7 +1,7 @@
 # coding=utf-8
 """
-    input_util
-    ~~~~~~~~~~
+    toolkit_library.input_util
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~
     get inputs from user and validate them 
 """
 import re
