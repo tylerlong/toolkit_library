@@ -67,10 +67,21 @@ class StringUtilTestCase(unittest.TestCase):
         assert StringUtil.camelcase_to_underscore('StringUtilTestCase') == 'string_util_test_case'
         assert StringUtil.camelcase_to_underscore('ModelQuestion') == 'model_question'
 
-    def test_html_br_and_p(self):
+
+from toolkit_library.text_converter import TextConverter
+class TextConverterTestCase(unittest.TestCase):
+    """test text_converter.py"""
+    def test_text_to_html(self):
         """Break text into HTML line breaks and paragraphs"""
-        assert StringUtil.html_br_and_p('aaa\nbbb') == '<p>aaa<br/>\nbbb</p>'
-        assert StringUtil.html_br_and_p('aaa\n\nbbb') == '<p>aaa</p>\n\n<p>bbb</p>'
+        assert TextConverter.text_to_html('aaa\nbbb') == '<p>aaa<br/>\nbbb</p>'
+        assert TextConverter.text_to_html('aaa\n\nbbb') == '<p>aaa</p>\n\n<p>bbb</p>'
+        assert TextConverter.text_to_html('aaa\n\n\n\nbbb') == '<p>aaa</p>\n\n<p>bbb</p>'
+
+    def test_html_to_text(self):
+        """Convert html source code to text, like you copy the text from a browser"""
+        assert TextConverter.html_to_text('<p>aaa<br/>\nbbb</p>') == '\naaa\n bbb\n'
+        assert TextConverter.html_to_text('<div>aaa<br/>\nbbb</div>') == 'aaa\n bbb\n'
+        assert TextConverter.html_to_text('<div>aaa\n\n\n\nbbb</div>') == 'aaa bbb\n'
 
 
 def default_test_suite():
@@ -80,6 +91,7 @@ def default_test_suite():
     #suite.addTest(unittest.makeSuite(InspectorTestCase))
     suite.addTest(unittest.makeSuite(EncryptionTestCase))
     suite.addTest(unittest.makeSuite(StringUtilTestCase))
+    suite.addTest(unittest.makeSuite(TextConverterTestCase))
     return suite
 
 

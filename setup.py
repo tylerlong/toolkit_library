@@ -10,7 +10,7 @@ def read_modules():
         result = '{0}{1}\n\n'.format(result, eval('{0}.__doc__'.format(module)))
     return result.rstrip()
 
-long_description = open('README').read().replace('{{ modules }}', read_modules())
+long_description = open('README.rst').read().replace('{{ modules }}', read_modules())
 
 setup(
     name = toolkit_library.__name__,

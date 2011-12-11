@@ -1,1 +1,1 @@
-include CHANGES LICENSE README tests.py
+include LICENSE README.rst tests.py todo.txt
