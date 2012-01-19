@@ -20,9 +20,9 @@ class InputUtil(object):
         assert type(name) == str and len(name) > 0
         prompt = name
         if pattern is not None:
-            prompt = '{0} (regex pattern: {1})'.format(prompt, pattern)
+            prompt = '{0} ({1})'.format(prompt, pattern)
         if default is not None:
-            prompt = '{0} (default value: {1})'.format(prompt, default)
+            prompt = '{0} [{1}]'.format(prompt, default)
         prompt = 'Please enter {0}: '.format(prompt)
 
         while True:
