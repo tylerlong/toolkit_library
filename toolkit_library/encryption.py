@@ -4,7 +4,7 @@
     ~~~~~~~~~~~~~~~~~~~~~~~~~~
     Generate random salt, hashcode for a password and validate the password against them.
 """
-import os, hashlib
+import os, hashlib, uuid
 
 
 class Encryption(object):
@@ -16,7 +16,7 @@ class Encryption(object):
         The string should be ascii-only and safe to be used in an url directly.
         hexdigest() returns a string contains only [0-9a-f], so it is quite safe to use it in an url.
         """
-        return hashlib.sha256(os.urandom(64)).hexdigest()
+        return uuid.uuid4().hex
 
     @staticmethod
     def generate_hashcode_and_salt(password):
@@ -30,10 +30,3 @@ class Encryption(object):
     def check_password(password, hashcode, salt):
         """Check if the password match the hashcode and salt"""
         return hashlib.sha256(password + salt).hexdigest() == hashcode
-
-    @staticmethod
-    def complex_enough(password, complexity):
-        if password == '123456':
-            return False
-        return True
-    # todo: create some complexity levels, from minimun to maximum. check passwords against these complexity levels

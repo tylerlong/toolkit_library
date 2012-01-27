@@ -1,7 +1,5 @@
 5. add formatter. format html, xml, json ..etc (necessary?)
 
-7. encryption.py improve complex_enough method, create some complexity levels to check against
-
 8. add syntax checker. syntax-checker and formatter are complements to pygments (necessary?)
 
 9. inspector.py, spelling check. "Did you mean ... ?" if user called a function wich does not exist.
