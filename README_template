@@ -1,0 +1,50 @@
+===============
+Toolkit Library
+===============
+
+
+|
+
+Introduction
+************
+Tookit Library is a collection of python modules for general purpose usage.
+
+It's a supplementary to the standard python library.
+
+
+|
+
+Quick Start
+***********
+
+::
+
+    pip install toolkit_library    
+
+
+|
+
+Modules included
+****************
+
+::
+
+{{ modules }}              
+
+
+|
+
+You wanna involve? 
+******************
+toolkit_library is released under BSD lisence.
+
+The source code is hosted on github: https://github.com/tylerlong/toolkit_library
+
+
+|
+
+Feedback
+********
+Comments, suggestions, questions, free beer, t-shirts, kindles, ipads ... are all welcome!
+
+Email: toolkit.library.feedback@gmail.com

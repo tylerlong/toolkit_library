@@ -7,11 +7,17 @@ def read_modules():
     package = inspector.PackageInspector(toolkit_library)
     for module in package.get_all_modules():
         exec('from toolkit_library import {0}'.format(module))
-        result = '{0}{1}\n\n'.format(result, eval('{0}.__doc__'.format(module)))
+        result = '{0}{1}\n'.format(result, eval('{0}.__doc__'.format(module)))
     return result.rstrip()
 
-long_description = open('README.rst').read().replace('{{ modules }}', read_modules())
+readme = ''
+with open('README_template', 'r') as file:
+    readme = file.read()
+readme = readme.replace('{{ modules }}', read_modules())
+with open('README.rst', 'w') as file:
+    file.write(readme)
 
+    
 setup(
     name = toolkit_library.__name__,
     version = toolkit_library.__version__,
@@ -20,7 +26,7 @@ setup(
     author = toolkit_library.__author__,
     author_email = 'tyler4long@gmail.com',
     description = 'Toolkit Library, full of useful toolkits',
-    long_description = long_description,
+    long_description = readme,
     packages = ['toolkit_library', ],
     platforms = 'any',
     classifiers = [
