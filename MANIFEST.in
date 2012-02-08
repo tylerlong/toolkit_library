@@ -1,1 +1,1 @@
-include LICENSE README.rst tests.py todo.txt
+include LICENSE README.rst README_template tests.py todo.txt
