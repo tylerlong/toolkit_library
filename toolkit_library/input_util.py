@@ -2,7 +2,7 @@
 """
     toolkit_library.input_util
     ~~~~~~~~~~~~~~~~~~~~~~~~~~
-    get inputs from user and validate them 
+    Get inputs from user and validate them 
 """
 import re
 

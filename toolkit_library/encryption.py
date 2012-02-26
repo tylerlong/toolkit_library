@@ -19,6 +19,11 @@ class Encryption(object):
         return uuid.uuid4().hex
 
     @staticmethod
+    def computer_hashcode(s, hash_method = hashlib.sha256):
+        """Computer hashcode for string"""
+        return hash_method(s).hexdigest()
+
+    @staticmethod
     def generate_hashcode_and_salt(password):
         """Generate a random salt, then generate hashcode for password + salt.
         returns (hashcode, salt,)

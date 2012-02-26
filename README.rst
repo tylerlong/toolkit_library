@@ -37,7 +37,7 @@ Modules included
 
     toolkit_library.input_util
     ~~~~~~~~~~~~~~~~~~~~~~~~~~
-    get inputs from user and validate them 
+    Get inputs from user and validate them 
 
 
     toolkit_library.inspector
@@ -57,7 +57,12 @@ Modules included
 
     toolkit_library.text_converter
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    Convert text from one format to another              
+    Convert text from one format to another
+
+
+    toolkit_library.web_client
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Web client for fetching web resources.              
 
 
 |
