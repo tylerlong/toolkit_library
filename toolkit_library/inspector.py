@@ -33,9 +33,11 @@ class ModuleInspector(object):
             print '====================================================='
             return self.invoke(InputUtil.get_input('the function name which you want to invoke'), *args) # recursive call with user input as parameter
 
-        functions = [value for (name, value) in inspect.getmembers(self.module, predicate) if name == function_name]
+        functions = [value for (name, value) in inspect.getmembers(self.module, predicate) if name.startswith(function_name)]
         if not functions:
             raise Exception('{0} has no function "{1}" defined'.format(self.module.__file__, function_name))
+        if len(functions) > 1:
+            raise Exception('multiple functions matched: {0}'.format(', '.join([function.__name__ for function in functions])))
 
         function = functions[0] # the function to be invoked
         required_args, _, _, defaults = inspect.getargspec(function) # required args of the function
@@ -59,7 +61,7 @@ class ModuleInspector(object):
 
     def get_all_classes(self):
        """Return all of the class names in the modoule as a list"""
-       members = inspect.getmembers(self.module, lambda model: inspect.isclass(model) and model.__module__ == self.module.__name__) 
+       members = inspect.getmembers(self.module, lambda model: inspect.isclass(model) and model.__module__ == self.module.__name__)
        return [name for name, _ in members]
 
     def import_all_classes_statement(self):
