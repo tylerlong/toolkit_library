@@ -16,7 +16,7 @@ class TextConverter(object):
         parser.close()
         return parser.text()
 
-    
+
     paragrap_pattern = re.compile(ur'(?:\r\n|\r|\n){2,}')
     line_break_pattern = re.compile(ur'(?:\r\n|\r|\n)')
     @staticmethod
