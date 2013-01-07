@@ -2,12 +2,10 @@
 
 8. add syntax checker. syntax-checker and formatter are complements to pygments (necessary?)
 
-9. inspector.py, spelling check. "Did you mean ... ?" if user called a function wich does not exist.
-
 10. unused import items checker
 
 11. input_util.py add support for choices. user can choose from pre-defined values.
 
 12. generate random text for testing purpose
 
-13. 
+13.

@@ -15,3 +15,16 @@ class StringUtil(object):
         """Convert CamelCase to camel_case"""
         temp = StringUtil.first_cap_pattern.sub(r'\1_\2', name)
         return StringUtil.all_cap_pattern.sub(r'\1_\2', temp).lower()
+
+    trim_pattern = re.compile("^\W+|\W+$|['`]")
+    and_pattern = re.compile('\s*&\s*')
+    at_pattern = re.compile('\s*@\s*')
+    hyphen_pattern = re.compile('\W+')
+    @staticmethod
+    def slugify(s):
+        """create slug which could be used in url for a string"""
+        s = StringUtil.trim_pattern.sub('', s.lower())
+        s = StringUtil.and_pattern.sub('-and-', s)
+        s = StringUtil.at_pattern.sub('-at-', s)
+        s = StringUtil.hyphen_pattern.sub('-', s)
+        return s
