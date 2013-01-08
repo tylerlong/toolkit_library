@@ -21,9 +21,10 @@ class StringUtil(object):
     at_pattern = re.compile('\s*@\s*')
     hyphen_pattern = re.compile('\W+')
     @staticmethod
-    def slugify(s):
+    def slugify(s, max_length = 64):
         """create slug which could be used in url for a string"""
-        s = StringUtil.trim_pattern.sub('', s.lower())
+        s = s[0:max_length].lower()
+        s = StringUtil.trim_pattern.sub('', s)
         s = StringUtil.and_pattern.sub('-and-', s)
         s = StringUtil.at_pattern.sub('-at-', s)
         s = StringUtil.hyphen_pattern.sub('-', s)
