@@ -29,3 +29,8 @@ class StringUtil(object):
         s = StringUtil.at_pattern.sub('-at-', s)
         s = StringUtil.hyphen_pattern.sub('-', s)
         return s
+
+    @staticmethod
+    def slug_words(slug):
+        """extract words from slug, separated by whitespaces"""
+        return slug.replace('-and-', '-').replace('-at-', '-').replace('-', ' ')
