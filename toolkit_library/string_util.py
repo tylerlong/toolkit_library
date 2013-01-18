@@ -16,7 +16,7 @@ class StringUtil(object):
         temp = StringUtil.first_cap_pattern.sub(r'\1_\2', name)
         return StringUtil.all_cap_pattern.sub(r'\1_\2', temp).lower()
 
-    trim_pattern = re.compile("^\W+|\W+$|['`]")
+    trim_pattern = re.compile("^\W+|\W+$")
     and_pattern = re.compile('\s*&\s*')
     at_pattern = re.compile('\s*@\s*')
     hyphen_pattern = re.compile('\W+')
